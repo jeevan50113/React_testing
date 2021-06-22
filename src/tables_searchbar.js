@@ -9,17 +9,17 @@ export default function Usecase() {
   
   useEffect(() => {
     
-  fetch('https://jsonplaceholder.typicode.com/posts') 
- .then((response) => {
-   if (response.ok) { 
-    return response.json();
-   }
-   return Promise.reject(response); 
- })
- .then((data) => setapiData(data))
- .catch((error) => {
-   console.log('Something went wrong.', error); 
- });
+ fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        return Promise.reject(response);
+      })
+      .then((result) => setapiData(result))
+      .catch((error) => {
+        alert("check the api once"+error);
+      });
     
     
     

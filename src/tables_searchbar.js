@@ -4,27 +4,33 @@ import { useState, useEffect } from "react";
 export default function Usecase() {
   const [apiData, setapiData] = useState([]);
   const [input, setinput] = useState("");
+  
+  
+  
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => setapiData(data))
-      .catch((error) => {
-        error.alert("invalid link");
-      });
-    fetch('flowers.jpg')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.blob();
-  })
-  .then(myBlob => {
-    myImage.src = URL.createObjectURL(myBlob);
-  })
-  .catch(error => {
-    console.error('There has been a problem with your fetch operation:', error);
-  });
-
+    
+  fetch('https://jsonplaceholder.typicode.com/todos/4') 
+ .then((response) => {
+   if (response.ok) { 
+    return response.json();
+   }
+   return Promise.reject(response); 
+ })
+ .then((result) => setapiData(data))
+ .catch((error) => {
+   console.log('Something went wrong.', error); 
+ });
+    
+    
+    
+    
+  //  fetch("https://jsonplaceholder.typicode.com/users")
+  //    .then((res) => res.json())
+   //   .then((data) => setapiData(data))
+   //   .catch((error) => {
+   //     error.alert("invalid link");
+    //  });
+    
     // const info = await data.json();
     // console.log(info);
   });

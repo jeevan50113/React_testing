@@ -13,12 +13,11 @@ export default function Usecase() {
     const URL = `https://jsonplaceholder.typicode.com/users`;
     try {
       let data = await fetch(URL);
-      data = await data.json();
       setapiData(data);
       setoriginaldata(data);
       sort();
     } catch (e) {
-      console.error(e);
+      error.alert("There has been a problem with your fetch operation:");
     }
   };
 

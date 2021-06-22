@@ -9,7 +9,7 @@ export default function Usecase() {
   
   useEffect(() => {
     
-  fetch('https://jsonplaceholder.typicode.com/todos/4') 
+  fetch('https://jsonplaceholder.typicode.com/posts') 
  .then((response) => {
    if (response.ok) { 
     return response.json();

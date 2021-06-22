@@ -16,7 +16,7 @@ export default function Usecase() {
    }
    return Promise.reject(response); 
  })
- .then((result) => setapiData(data))
+ .then((data) => setapiData(data))
  .catch((error) => {
    console.log('Something went wrong.', error); 
  });

@@ -17,7 +17,7 @@ export default function Usecase() {
       setoriginaldata(data);
       sort();
     } catch (e) {
-      error.alert("There has been a problem with your fetch operation:");
+      alert("There has been a problem with your fetch operation:");
     }
   };
 
